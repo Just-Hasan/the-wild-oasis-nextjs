@@ -8,7 +8,7 @@ async function SelectCountry({ defaultCountry, name, id, className }) {
   const { user } = await auth();
   const data = await getGuest(user.email);
   const flag =
-    countries.find((country) => country.name === defaultCountry)?.flag ?? "";
+    countries?.find((country) => country.name === defaultCountry)?.flag ?? "";
 
   return (
     <select
@@ -19,7 +19,7 @@ async function SelectCountry({ defaultCountry, name, id, className }) {
       className={className}
     >
       <option>{data.nationality}</option>
-      {countries.map((c) => (
+      {countries?.map((c) => (
         <option key={c.name} value={`${c.name}%${c.flag}`}>
           {c.name}
         </option>
