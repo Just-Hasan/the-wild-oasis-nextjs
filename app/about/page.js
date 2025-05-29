@@ -17,7 +17,7 @@ export default async function Page() {
     <div className="grid grid-cols-5 gap-x-24 gap-y-32 text-lg items-center">
       <div className="col-span-3">
         <h1 className="text-4xl mb-10 text-accent-400 font-medium">
-          Welcome to The Wild Oasis {data[0].regularPrice}
+          Welcome to The Wild Oasis {data[0]?.regularPrice}
         </h1>
 
         <div className="space-y-8">

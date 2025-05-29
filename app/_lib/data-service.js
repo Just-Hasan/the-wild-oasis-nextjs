@@ -24,6 +24,18 @@ export async function getCabin(id) {
   return data;
 }
 
+export async function getCabinIds() {
+  let { data: cabins, error } = await supabase.from("cabins").select("id");
+
+  if (error) {
+    console.error(error);
+    throw new Error("Cabin IDs could not be loaded");
+  }
+  console.log(cabins);
+
+  return cabins;
+}
+
 export async function getCabinPrice(id) {
   const { data, error } = await supabase
     .from("cabins")
